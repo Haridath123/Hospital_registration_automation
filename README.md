@@ -17,12 +17,49 @@ A feature-rich, console-based hospital appointment and food request simulation w
 
 ---
 
-## Tech Stack
-
-- Python 3
-- `tqdm` for animations
-- `tabulate` for table formatting
-- `random`, `datetime`, `time`, and `os` from Python standard library
+Imports and Libraries:
+•	Standard Libraries:
+o	subprocess, sys: Used for installing external libraries (tabulate and tqdm) through the pip package manager.
+o	random: Used for generating random numbers, e.g., to simulate waiting times and doctor availability.
+o	time, sleep: Used for timing functions such as delays in the loading screen or sounds.
+o	os: Provides functionality to interact with the operating system.
+•	External Libraries:
+o	tabulate: Used for creating neat, formatted tables to display data like meal options, doctor lists, etc.
+o	tqdm: Used for the progress bar in the loading_screen function.
+2. Main Functions:
+•	loading_screen(): Displays a loading animation using tqdm to simulate processing of a transaction.
+•	beep_sound(): Simulates a beep sound using the ASCII Bell character and pauses for 3 seconds.
+•	welcome(): Prints an ASCII art welcome message and introduces the hospital booking system.
+•	proceed(): Prompts the user to either proceed with the hospital booking system or exit.
+•	patient_type(): Asks the user whether they are a new patient, an emergency case, or an admitted patient.
+o	If the user selects "Emergency", it redirects them to the emergency department and exits further patient booking.
+o	If the user selects "Admitted Patient", the food request section is triggered.
+•	food_request(): Displays food options and takes user input for meal preferences for admitted patients.
+•	display_specializations(): Displays available specializations (such as Dentistry, Optometry, etc.) in a formatted table.
+•	select_specialization(): Prompts the user to choose a specialization and displays the corresponding doctor list.
+•	display_doctors(): Displays the list of available doctors in the chosen specialization along with their qualifications and estimated waiting times.
+•	select_doctor(): Prompts the user to select a doctor from the available list, shows waiting times, and allows them to change the doctor if they wish.
+•	process_payment(): Handles the payment process, allowing the user to choose between online (Google Pay) or cash payment, and simulates the payment transaction.
+•	hospital_booking(): The main function that orchestrates the hospital booking system flow:
+o	Starts by selecting the patient type.
+o	Guides the user through specialization selection, doctor selection, food request (for admitted patients), and payment processing.
+o	Ends with confirming the appointment after successful payment.
+3. Data:
+•	specializations: A dictionary holding different medical specialties (e.g., Dentistry, Optometry, ENT) and their corresponding available doctors. Each doctor has a random number of patients and a random waiting time associated with them.
+4. Flow of Execution:
+•	The program begins by calling the welcome() function to display the hospital's greeting message.
+•	Next, the proceed() function is called to ask the user if they wish to continue. If they choose to exit, the program ends.
+•	If they proceed, the hospital_booking() function is executed, which guides the user through selecting a patient type, specialization, doctor, and payment options.
+•	The entire process is modularized into functions, making it easy to maintain, test, and modify specific sections of the program.
+Key Concepts:
+•	Modularization: The program is divided into separate functions that handle specific tasks, making the code cleaner and easier to understand.
+•	User Interaction: The program relies on user inputs at various points (e.g., for selecting patient types, specializations, doctors, and payment methods).
+•	Randomization: The random module is used to simulate waiting times and the number of patients for each doctor, making the booking process more dynamic and realistic.
+•	Formatted Output: The tabulate library is used to present data in neatly organized tables for better readability.
+Modules and Interconnections:
+•	loading_screen() and beep_sound() are utility functions used to simulate user feedback during the booking process.
+•	patient_type(), food_request(), and hospital_booking() are the key control flow functions, each triggering different parts of the booking system.
+•	The specializations dictionary connects the user's input with relevant doctor lists, which are then displayed by select_specialization() and select_doctor().
 
 ---
 
