@@ -34,12 +34,12 @@ A feature-rich, console-based hospital appointment and food request simulation w
    ```bash
    pip install tqdm tabulate
 >WELCOME TO TRIVANDRUM MEDICARE CENTER
-Please enter your name: Hari
-Select patient type:
-1. New Patient
-2. Emergency
-3. Admitted
+>Please enter your name: Hari
+>Select patient type:
+>1. New Patient
+>2. Emergency
+>3. Admitted
 
---> Booking appointment with Orthopedic department...
---> Your doctor is Dr. Sameer Kumar
---> Estimated wait time: 20 minutes
+>--> Booking appointment with Orthopedic department...
+>--> Your doctor is Dr. Sameer Kumar
+>--> Estimated wait time: 20 minutes
